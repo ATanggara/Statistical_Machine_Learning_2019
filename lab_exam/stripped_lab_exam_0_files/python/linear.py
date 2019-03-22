@@ -7,7 +7,7 @@
 #  - do not import any modules or external code
 #
 # You will get zero marks for this part if you break these rules.
-#
+
 
 import numpy as np
 
@@ -27,8 +27,8 @@ def linear_least_squares(x, y):
 
 	# BEGIN_SOLUTION 
     x = x.T
-    w = np.linalg.inv(x.T@x) @ x.T @ y
-    print(w)
+    w = np.linalg.pinv(x) @ y
+#    w = np.linalg.lstsq(x,y)[0]
 	# END_SOLUTION
 
     return w
